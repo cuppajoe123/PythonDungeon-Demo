@@ -34,10 +34,12 @@ class MapTile:
         moves.append(actions.ViewInventory())
         for a in config.player.inventory:
             if isinstance(a, items.Dagger):
-                if config.player.equipped_weapon != items.Dagger:
+                b = config.player.equipped_weapon
+                if isinstance(b, items.Dagger):
+                    pass
+                else:
                     moves.append(actions.EquipDagger())
                     break
-        
         return moves
     
         
@@ -101,10 +103,12 @@ class Door(MapTile):
         moves.append(actions.ViewInventory())
         for a in config.player.inventory:
             if isinstance(a, items.Dagger):
-                if config.player.equipped_weapon != items.Dagger:
+                b = config.player.equipped_weapon
+                if isinstance(b, items.Dagger):
+                    pass
+                else:
                     moves.append(actions.EquipDagger())
                     break
-        
         return moves
     
     
@@ -119,10 +123,13 @@ class LootRoom(MapTile):
         moves = self.adjacent_moves()
         moves.append(actions.ViewInventory())
         for a in config.player.inventory:
-            if isinstance(a, items.Dagger) and config.player.equipped_weapon != items.Dagger:
-                moves.append(actions.EquipDagger())
-                break
-        print(config.player.equipped_weapon)
+            if isinstance(a, items.Dagger):
+                b = config.player.equipped_weapon
+                if isinstance(b, items.Dagger):
+                    pass
+                else:
+                    moves.append(actions.EquipDagger())
+                    break
         if len(self.item) > 0:
             config.player.grab_string = []
             item_string = "Grab {}".format(self.item[0].name.lower())
@@ -159,18 +166,25 @@ class EnemyRoom(MapTile):
                     print(string)
                     moves = [actions.Attack(enemy=self.enemy)]
             for a in config.player.inventory:
-                if isinstance(a, items.Dagger) and config.player.equipped_weapon != items.Dagger:
-                    moves.append(actions.EquipDagger())
-                    break
-                    
+                if isinstance(a, items.Dagger):
+                    b = config.player.equipped_weapon
+                    if isinstance(b, items.Dagger):
+                        pass
+                    else:
+                        moves.append(actions.EquipDagger())
+                        break
             return moves
         else:
             moves = self.adjacent_moves()
             moves.append(actions.ViewInventory())
             for a in config.player.inventory:
-                if isinstance(a, items.Dagger) and config.player.equipped_weapon != items.Dagger:
-                    moves.append(actions.EquipDagger())
-        
+                if isinstance(a, items.Dagger):
+                    b = config.player.equipped_weapon
+                    if isinstance(b, items.Dagger):
+                        pass
+                    else:
+                        moves.append(actions.EquipDagger())
+                        break
             return moves
     
         
@@ -285,7 +299,7 @@ class FindDaggerRoom(LootRoom):
         
     def intro_text(self):
         if len(self.item) >= 1:
-            return """You notice a large rug in the center of the room"""
+            return """\nYou notice a large rug in the center of the room"""
         else:
             return """
             An unremarkable part of the cave. You must forge onwards.
@@ -299,16 +313,6 @@ class FindKeyTile(LootRoom):
             return """You notice a golden key on a pedestal."""
         else:
             return """You see a wooden pedestal where the golden key once was."""
-    
-
-class Find5GoldRoom(LootRoom):
-    def __init__(self, x, y):
-        super().__init__(x, y, items.Gold())
-        
-    def intro_text(self):
-        return """
-        You notice a small coin purse on the ground. You pick it up!"""
-    
     
 class LeaveCaveRoom(MapTile):
     def intro_text(self):

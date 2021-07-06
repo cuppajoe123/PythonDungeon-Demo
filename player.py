@@ -42,7 +42,7 @@ class Player():
         
     def equip_dagger(self):
         self.equip_weapon(items.Dagger())
-        print("You have equipped your dagger.")
+        print("\nYou have equipped your dagger.")
         
 
     def attack(self, enemy):
@@ -54,7 +54,7 @@ class Player():
             ("{} lives on.".format(enemy.name))
             
     def grab(self, item):
-        print(f"You grab the {item[0].name.lower()}.")
+        print(f"\nYou grab the {item[0].name.lower()}.")
         popped_item = item.pop()
         self.inventory.append(popped_item)
         

@@ -4,8 +4,8 @@ class Item():
         self.name = name
         self.description = description
         
-#   def __str__(self):
-#       return "{}\n=====\n{}\nValue: {}\n".format(self.name, self.description, self.value)
+    def __str__(self):
+        return "{}\n=====\n{}\n".format(self.name, self.description) 
     
 class Weapon(Item):
     """A template for all weapons"""
@@ -13,8 +13,8 @@ class Weapon(Item):
         self.damage = damage
         self.techniques = techniques
         super().__init__(name, description)
-#   def __str__(self):
-#       return "{}\n=====\n{}\nValue: {}".format(self.name, self.description, self.value,)
+    def __str__(self):
+        return ""
 
 
 class Dagger(Weapon):
