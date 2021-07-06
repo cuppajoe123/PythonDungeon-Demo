@@ -1,3 +1,0 @@
-StartingRoom	EmptyCavePath	FindDaggerRoom	EmptyCavePath	FindDaggerRoom
-		EmptyCavePath			
-

@@ -1,8 +1,0 @@
-Put more repeated code into functions
-Emphasize creative combat and less so environmental puzzles
-Items will consist of keys and weapons
-Some enemies require certain weapons
-
-Implement JSON to save user progress
-
-Begin creation of game assets
