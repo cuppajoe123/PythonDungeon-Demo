@@ -1,22 +1,22 @@
 import random
 import items, enemies, actions, world, config
 from player import Player
- 
+
 class MapTile:
-    """Parent tile class"""
-    config.init()
-    def __init__(self, x, y, ):
-        self.x = x
-        self.y = y
-    def intro_text(self):
-        raise NotImplementedError()
- 
-    def modify_player(self, player):
-        raise NotImplementedError()
-    
-    def adjacent_moves(self):
-        """Returns all move actions for adjacent tiles."""
-        moves = []
+"""Parent tile class"""
+config.init()
+def __init__(self, x, y, ):
+    self.x = x
+    self.y = y
+def intro_text(self):
+    raise NotImplementedError()
+
+def modify_player(self, player):
+    raise NotImplementedError()
+
+def adjacent_moves(self):
+    """Returns all move actions for adjacent tiles."""
+    moves = []
         if world.tile_exists(self.x, self.y + 1):
             moves.append(actions.MoveEast())
         if world.tile_exists(self.x, self.y - 1):
