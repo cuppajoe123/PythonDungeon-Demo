@@ -46,6 +46,7 @@ class MapTile:
         
     
 class StartingRoom(MapTile):
+    """The tile that the player first spawns into."""
     def intro_text(self):
         return """
         You find yourself if a cave with a flickering torch on the wall.
@@ -323,6 +324,7 @@ class FindKeyTile(LootRoom):
             return """You see a wooden pedestal where the golden key once was."""
     
 class LeaveCaveRoom(MapTile):
+    """The player must move to this tile to win the game"""
     def intro_text(self):
         return """
         You see a bright light in the distance...

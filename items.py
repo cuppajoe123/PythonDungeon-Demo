@@ -33,6 +33,7 @@ class Fists(Weapon):
                          techniques={'tech_1': 'Punch',
                                      'tech_2': 'Smack'})
 class Key(Item):
+    """The player must have the Key item to walk through doors"""
     def __init__(self):
         super().__init__(name="Key",
                          description="An ornate golden key with red gems encrusted")
