@@ -228,7 +228,7 @@ class HealingFountain(MapTile):
         return """
         You see a glowing fountain before you. The water looks so cool and refreshing that you are filled with determination for whatever lies ahead. You dunk your entire face in and drink as much as you can. Full HP!
         """
-    def modify_player(self):
+    def modify_player(self, player):
         config.player.hp = 16
 
 class GiantSpiderRoom(EnemyRoom):
