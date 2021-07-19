@@ -56,7 +56,25 @@ class StartingRoom(MapTile):
     def modify_player(self, player):
         #Room has no action on player
         pass
-    
+
+    def available_actions(self):
+        """Returns all of the available actions in this room."""
+        moves = []
+        moves = self.adjacent_moves()
+        moves.append(actions.ViewInventory())
+        if config.player.easy_mode == True:
+            moves.append(actions.TurnOffEasyMode())
+        for a in config.player.inventory:
+            if isinstance(a, items.Dagger):
+                b = config.player.equipped_weapon
+                if isinstance(b, items.Dagger):
+                    pass
+                else:
+                    moves.append(actions.EquipDagger())
+                    break
+        return moves
+
+
 class EntranceTile(MapTile):
     """A tile that acts as the introduction to the entire room."""
     def intro_text(self):
@@ -164,7 +182,8 @@ class EnemyRoom(MapTile):
                 for b in self.enemy.weaknesses.values():
                     string = "{} {}".format(a, b)
                     config.player.available_attacks.append(string)
-                    print(string)
+                    if config.player.easy_mode == True:
+                        print(string)
                     moves = [actions.Attack(enemy=self.enemy)]
             for a in config.player.inventory:
                 if isinstance(a, items.Dagger):
