@@ -16,6 +16,7 @@ class Player():
     def turn_off_easy_mode(self):
         self.easy_mode = False
         print("Easy mode off")
+
     def is_alive(self):
         return self.hp > 0
  

@@ -46,7 +46,7 @@ class TieflingKing(Enemy):
                 weaknesses={'weakness_1': 'tail', 
                             'weakness_2': 'jaw', 
                             'weakness_3': 'hands', 
-                            'weakness_4': 'arms'}, 
+                            'weakness_4': 'legs'}, 
                 attacks=[
                     'The Tiefling King lunges towards you with its razor sharp teeth ands takes a bite out of your arm. There is no bleeding, for its teeth are as hot as lava.', 
                     'The Tiefling King casts a fireball at you.',

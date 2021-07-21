@@ -257,7 +257,7 @@ class GiantSpiderRoom(EnemyRoom):
     def intro_text(self):
         if self.enemy.is_alive():
             return """
-            A giant spider jumps down from its web in front of you!
+            A giant spider jumps down from its web in front of you! It has huge red eyes and long hairy legs.
             """
         else:
             return """
@@ -271,8 +271,7 @@ class OgreRoom(EnemyRoom):
     def intro_text(self):
         if self.enemy.is_alive():
             return """
-            A vicious, giant ogre wobbles towards you with a huge belly and
-            long dangly arms.
+            A vicious, giant ogre wobbles towards you with a huge belly and long dangly arms.
             """
         else:
             return """
@@ -285,9 +284,7 @@ class ImpRoom(EnemyRoom):
     def intro_text(self):
         if self.enemy.is_alive():
             return """
-            You hear a deafening screech above you just as a vicious looking,
-            fiery imp flies towards you. It has large, thin wings and a
-            disgusting, unprotected head.
+            You hear a deafening screech above you just as a vicious looking, fiery imp flies towards you. It has large, thin wings and a red, mottled head.
             """
         else:
             return """
@@ -301,7 +298,7 @@ class DraugrRoom(EnemyRoom):
     def intro_text(self):
         if self.enemy.is_alive():
             return """
-            As you make your way through the cavern, you hear what sounds like chimes. Suddenly, a rotten Draugr crawls out of a nearby coffin, equipped with a huge broadsword. It is wearing rusted armor, with an exposed ribcageand pelvis. He immediately sees you and attacks.
+            As you make your way through the cavern, you hear what sounds like chimes. Suddenly, a rotten Draugr crawls out of a nearby coffin, equipped with a huge broadsword. It is wearing rusted armor, with an exposed ribcage and pelvis. He immediately sees you and attacks.
             """
         else:
             return """
@@ -315,7 +312,7 @@ class FinalBoss(EnemyRoom):
     def intro_text(self):
         if self.enemy.is_alive():
             return """
-            insert dramatic boss description and let the battle commence.
+            You hear dramatic boss music begin to play and you immediately realize what is about to happen. You suddenly see a pair of bright, burning eyes open in the darkness. The Tiefling King emerges from the other side of the room. He has a long, sharp tail, a powerful jaw with rows of sharp teeth, and sharp claws. You notice it's legs exposed though. The Tiefling King lunges towards you to battle!
             """
         else:
             return """
@@ -327,7 +324,7 @@ class FindDaggerRoom(LootRoom):
         
     def intro_text(self):
         if len(self.item) >= 1:
-            return """\nYou notice a large rug in the center of the room"""
+            return """\nYou notice a large rug in the center of the room. You lift up the rug to find a sharp dwarven dagger underneath it."""
         else:
             return """
             An unremarkable part of the cave. You must forge onwards.

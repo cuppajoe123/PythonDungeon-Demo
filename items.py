@@ -20,7 +20,7 @@ class Weapon(Item):
 class Dagger(Weapon):
     def __init__(self):
         super().__init__(name="Dagger",
-                         description="A small dagger with some rust. Somewhat more dangerous than a rock.",
+                         description="A small dwarven dagger with some rust. Perfect for slicing and stabbing. Somewhat more dangerous than your fists.",
                          damage=2,
                          techniques={'tech_1': 'Stab',
                                      'tech_2': 'Slice'})
