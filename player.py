@@ -22,13 +22,14 @@ class Player():
  
     def print_inventory(self):
         for item in self.inventory:
-            print(item, '\n')
+            print(item.name, '\n')
 
     def move(self, dx, dy):
         self.location_x += dx
         self.location_y += dy
         print(world.tile_exists(self.location_x, self.location_y).intro_text())
     """The dx and dy values are jumbled because those are spreadsheet coordinates"""
+
     def move_north(self):
         self.move(dx=-1, dy=0)
  
