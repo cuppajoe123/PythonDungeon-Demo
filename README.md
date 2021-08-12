@@ -4,4 +4,6 @@ This demo can be used as an example for what games made with python-dungeon can 
 python-dungeon depends on only one Python package not in the standard library. Use `pip install xlrd` to install the necessary module. It is needed for the program to parse the spreadsheet file.
 
 ### Credit
-I started this project by doing a tutorial I found online. Some of the code may be from that, so I just wanted to give it credit. https://letstalkdata.com/2014/08/how-to-write-a-text-adventure-in-python/
+Project: text-adventure-tut https://github.com/phillipjohnson/text-adventure-tut
+Copyright (c) 2014 Phillip Johnson
+License https://github.com/phillipjohnson/text-adventure-tut/blob/master/LICENSE.txt
