@@ -6,7 +6,7 @@ python-dungeon depends on only one Python package not in the standard library. U
 ## How to Play
 As the player, your default actions are to move north, south, east, or west (if the path permits), and to view your inventory. When you walk onto a tile with an item on it, you can grab that item, and if it is a weapon, equip it. The way combat works is quite interesting. Every weapon you pick up has a list of 'techniques', which are special keywords you must use when typing in your attack. However, attack commands are made up one other part. Each enemy you face will also have a list of keywords associated with it. That list is called 'weaknesses'. You must also include an enemy weakness in your attack command.
 #### The format for the attack in this:
-<technique> <weakness>
+`technique` `weakness`
 An example list of techniques would be: [slice, stab, cut, throw]
 An example list of weaknesses would be: [eyes, arms, head, legs]
 To land an attack, you must use a valid combination of techniques and weaknesses.
