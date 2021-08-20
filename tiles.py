@@ -50,8 +50,8 @@ class StartingRoom(MapTile):
     """The tile that the player first spawns into."""
     def intro_text(self):
         return """
-        You find yourself if a cave with a flickering torch on the wall.
-        You can make out four paths, each equally as dark and foreboding.
+        You find yourself in a cave with a flickering torch on the wall.
+        You can see a single corridor just north of you. It is dark and foreboding.\n
         """
 
     def modify_player(self, player):
@@ -93,9 +93,9 @@ class Door(MapTile):
     def intro_text(self):
         for a in config.player.inventory:
             if isinstance(a, items.Key):
-                return """The door is unlocked. You may walk through."""
+                return """\nThe door is unlocked. You may walk through.\n"""
                 break
-        return """The door is locked. Find a key to unlock it."""
+        return """\nThe door is locked. Find a key to unlock it.\n"""
 
     def modify_player(self, player):
         pass
@@ -210,7 +210,7 @@ class EnemyRoom(MapTile):
 class EmptyCavePath(MapTile):
     def intro_text(self):
         return """
-        Another unremarkable part of the cave. You must forge onwards.
+        Another unremarkable part of the cave. You must forge onwards.\n
         """
 
     def modify_player(self, player):
@@ -222,7 +222,7 @@ class RightCorner(MapTile):
     """Same as EmptyCavePath, but different flavor text."""
     def intro_text(self):
         return """
-        The corridor turns east.
+        \nThe corridor turns east.\n
         """
 
     def modify_player(self, player):
@@ -234,7 +234,7 @@ class LeftCorner(MapTile):
     """Same as EmptyCavePath, but different flavor text."""
     def intro_text(self):
         return """
-        The corridor turns west.
+        \nThe corridor turns west.\n
         """
 
     def modify_player(self, player):
@@ -245,11 +245,11 @@ class LeftCorner(MapTile):
 class HealingFountain(MapTile):
     """Heals the player to full HP."""
     def intro_text(self):
-        txt = ("You see a glowing fountain before you. The water "
+        txt = ("\nYou see a glowing fountain before you. The water "
                "looks so cool and refreshing that you are filled "
                "with determination for whatever lies ahead. You "
                "dunk your entire face in and drink as much as you "
-               "can. Full HP!")
+               "can. Full HP!"\n)
         return txt
 
     def modify_player(self, player):
@@ -262,12 +262,12 @@ class GiantSpiderRoom(EnemyRoom):
 
     def intro_text(self):
         if self.enemy.is_alive():
-            txt = ("A giant spider jumps down from its web in front "
-                   "of you! It has huge red eyes and long hairy legs.")
+            txt = ("\nA giant spider jumps down from its web in front "
+                   "of you! It has huge red eyes and long hairy legs."\n)
             return txt
         else:
             return """
-            The corpse of a dead spider rots on the ground.
+            \nThe corpse of a dead spider rots on the ground.\n
             """
 
 
@@ -277,12 +277,12 @@ class OgreRoom(EnemyRoom):
 
     def intro_text(self):
         if self.enemy.is_alive():
-            txt = ("A vicious, giant ogre wobbles towards you with a "
-                   "huge belly and long dangly arms.")
+            txt = ("\nA vicious, giant ogre wobbles towards you with a "
+                   "huge belly and long dangly arms."\n)
             return txt
         else:
             return """
-            You see the remains from the intense skirmish with the ogre.
+            \nYou see the remains from the intense skirmish with the ogre.\n
             """
 
 
@@ -292,13 +292,13 @@ class ImpRoom(EnemyRoom):
 
     def intro_text(self):
         if self.enemy.is_alive():
-            txt = ("You hear a deafening screech above you just as a "
+            txt = ("\nYou hear a deafening screech above you just as a "
                    "vicious looking, fiery imp flies towards you. It "
-                   "has large, thin wings and a red, mottled head.")
+                   "has large, thin wings and a red, mottled head."\n)
             return txt
         else:
             return """
-            You see the scorch marks from your battle with the imp.
+            \nYou see the scorch marks from your battle with the imp.\n
             """
 
 
@@ -308,16 +308,16 @@ class DraugrRoom(EnemyRoom):
 
     def intro_text(self):
         if self.enemy.is_alive():
-            txt = ("As you make your way through the cavern, you hear "
+            txt = ("\nAs you make your way through the cavern, you hear "
                    "what sounds like chimes. Suddenly, a rotten Draugr "
                    "crawls out of a nearby coffin, equipped with a huge "
                    "broadsword. It is wearing rusted armor, with an "
                    "exposed ribcage and pelvis. He immediately sees you "
-                   "and attacks.")
+                   "and attacks."\n)
             return txt
         else:
             return """
-            You see a pile of bones.
+            \nYou see a pile of bones.\n
             """
 
 
@@ -327,18 +327,18 @@ class FinalBoss(EnemyRoom):
 
     def intro_text(self):
         if self.enemy.is_alive():
-            txt = ("You hear dramatic boss music begin to play and you "
+            txt = ("\nYou hear dramatic boss music begin to play and you "
                    "immediately realize what is about to happen. You "
                    "suddenly see a pair of bright, burning eyes open in "
                    "the darkness. The Tiefling King emerges from the "
                    "other side of the room. He has a long, sharp tail, a "
                    "powerful jaw with rows of sharp teeth, and sharp "
                    "claws. You notice it's legs exposed though. The "
-                   "Tiefling King lunges towards you to battle!")
+                   "Tiefling King lunges towards you to battle!"\n)
             return txt
         else:
             return """
-            You see the entrance ahead of you. Victory is within your grasp!
+            \nYou see the entrance ahead of you. Victory is within your grasp!\n
             """
 
 
@@ -350,11 +350,11 @@ class FindDaggerRoom(LootRoom):
         if len(self.item) >= 1:
             txt = ("\nYou notice a large rug in the center of the room. "
                    "You lift up the rug to find a sharp dwarven dagger "
-                   "underneath it.")
+                   "underneath it.\n")
             return txt
         else:
             return """
-            An unremarkable part of the cave. You must forge onwards.
+            \nAn unremarkable part of the cave. You must forge onwards.\n
             """
 
 
@@ -364,10 +364,10 @@ class FindKeyTile(LootRoom):
 
     def intro_text(self):
         if len(self.item) >= 1:
-            return """You notice a golden key on a pedestal."""
+            return """\nYou notice a golden key on a pedestal.\n"""
         else:
-            txt = ("You see a wooden pedestal where the golden key "
-                   "once was.")
+            txt = ("\nYou see a wooden pedestal where the golden key "
+                   "once was.\n")
             return txt
 
 
@@ -375,7 +375,7 @@ class LeaveCaveRoom(MapTile):
     """The player must move to this tile to win the game"""
     def intro_text(self):
         return """
-        You see a bright light in the distance...
+        \nYou see a bright light in the distance...
         ... it grows as you get closer! It's sunlight!
 
         Victory is yours!

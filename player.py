@@ -53,7 +53,7 @@ class Player():
 
     def attack(self, enemy):
         enemy.hp -= self.equipped_weapon.damage
-        print("You attack the enemy.")
+        print("\nYou attack the enemy.")
         if not enemy.is_alive():
             print("You killed {}!".format(enemy.name))
         else:
