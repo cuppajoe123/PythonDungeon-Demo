@@ -249,7 +249,7 @@ class HealingFountain(MapTile):
                "looks so cool and refreshing that you are filled "
                "with determination for whatever lies ahead. You "
                "dunk your entire face in and drink as much as you "
-               "can. Full HP!"\n)
+               "can. Full HP!\n")
         return txt
 
     def modify_player(self, player):
@@ -263,7 +263,7 @@ class GiantSpiderRoom(EnemyRoom):
     def intro_text(self):
         if self.enemy.is_alive():
             txt = ("\nA giant spider jumps down from its web in front "
-                   "of you! It has huge red eyes and long hairy legs."\n)
+                   "of you! It has huge red eyes and long hairy legs.\n")
             return txt
         else:
             return """
@@ -278,7 +278,7 @@ class OgreRoom(EnemyRoom):
     def intro_text(self):
         if self.enemy.is_alive():
             txt = ("\nA vicious, giant ogre wobbles towards you with a "
-                   "huge belly and long dangly arms."\n)
+                   "huge belly and long dangly arms.\n")
             return txt
         else:
             return """
@@ -294,7 +294,7 @@ class ImpRoom(EnemyRoom):
         if self.enemy.is_alive():
             txt = ("\nYou hear a deafening screech above you just as a "
                    "vicious looking, fiery imp flies towards you. It "
-                   "has large, thin wings and a red, mottled head."\n)
+                   "has large, thin wings and a red, mottled head.\n")
             return txt
         else:
             return """
@@ -313,7 +313,7 @@ class DraugrRoom(EnemyRoom):
                    "crawls out of a nearby coffin, equipped with a huge "
                    "broadsword. It is wearing rusted armor, with an "
                    "exposed ribcage and pelvis. He immediately sees you "
-                   "and attacks."\n)
+                   "and attacks.\n")
             return txt
         else:
             return """
@@ -334,7 +334,7 @@ class FinalBoss(EnemyRoom):
                    "other side of the room. He has a long, sharp tail, a "
                    "powerful jaw with rows of sharp teeth, and sharp "
                    "claws. You notice it's legs exposed though. The "
-                   "Tiefling King lunges towards you to battle!"\n)
+                   "Tiefling King lunges towards you to battle!\n")
             return txt
         else:
             return """
