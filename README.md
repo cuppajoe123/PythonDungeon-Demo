@@ -11,7 +11,7 @@ An example list of techniques would be: [slice, stab, cut, throw]\
 An example list of weaknesses would be: [eyes, arms, head, legs]\
 To land an attack, you must use a valid combination of techniques and weaknesses.
 
-At the beginning of the game, you will be asked if you want to play on hard mode. Hard mode is how the game was intended to be played. On easy mode, each turn you will be given a list of attacks you can perform on the enemy. On hard mode, you must read the description of the enemy to infer what it's weaknesses will be, as well as what you weapon's techniques are.
+At the beginning of the game, you will be asked if you want to play on hard mode. Hard mode is how the game was intended to be played. On easy mode, each turn you will be given a list of attacks you can perform on the enemy. On hard mode, you must read the description of the enemy to infer what it's weaknesses will be, as well as what you weapon's techniques are. 
 
 ### Credit
 Project: text-adventure-tut https://github.com/phillipjohnson/text-adventure-tut
