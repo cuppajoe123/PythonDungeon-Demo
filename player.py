@@ -11,7 +11,6 @@ class Player():
         self.equipped_weapon = items.Fists()
         self.available_attacks = []
         self.grab_string = []
-#       self.room_text = "This is the default room text."
  
     def turn_off_easy_mode(self):
         self.easy_mode = False
@@ -21,8 +20,10 @@ class Player():
         return self.hp > 0
  
     def print_inventory(self):
+        if len(self.inventory) == 0:
+            print("\nYour bag is empty\n")
         for item in self.inventory:
-            print(item.name, '\n', item.description, '\n', '\n')
+            print('\n', item.name, '\n', item.description, '\n', '\n')
 
     def move(self, dx, dy):
         self.location_x += dx

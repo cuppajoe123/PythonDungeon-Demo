@@ -75,15 +75,6 @@ class StartingRoom(MapTile):
         return moves
 
 
-# class EntranceTile(MapTile):
-#    """A tile that acts as the introduction to the entire room."""
-#    def intro_text(self):
-#        txt = ("You are in a large room that is empty save for a "
-#               "terminal to the north.")
-#        return txt
-#    def modify_player(self, player):
-#        player.room_text = self.intro_text()
-
 class Door(MapTile):
     """Doors will always face south to north. Anything north
     of the door is blocked until the door is unlocked"""

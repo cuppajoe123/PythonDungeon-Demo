@@ -18,28 +18,28 @@ class Action():
 
 class MoveNorth(Action):
     def __init__(self):
-        super().__init__(method=Player.move_north, display_name='Move north', input_names=['Move north'])
+        super().__init__(method=Player.move_north, display_name='Move north (n)', input_names=['n'])
 
 
 class MoveSouth(Action):
     def __init__(self):
-        super().__init__(method=Player.move_south, display_name='Move south', input_names=['Move south'])
+        super().__init__(method=Player.move_south, display_name='Move south (s)', input_names=['s'])
 
 
 class MoveEast(Action):
     def __init__(self):
-        super().__init__(method=Player.move_east, display_name='Move east', input_names=['Move east'])
+        super().__init__(method=Player.move_east, display_name='Move east (e)', input_names=['e'])
 
 
 class MoveWest(Action):
     def __init__(self):
-        super().__init__(method=Player.move_west, display_name='Move west', input_names=['Move west'])
+        super().__init__(method=Player.move_west, display_name='Move west (w)', input_names=['w'])
 
 
 class ViewInventory(Action):
     """Prints the player's inventory"""
     def __init__(self):
-        super().__init__(method=Player.print_inventory, display_name='View inventory', input_names=['View inventory'])
+        super().__init__(method=Player.print_inventory, display_name='View inventory (i)', input_names=['i'])
 
 
 class EquipDagger(Action):
